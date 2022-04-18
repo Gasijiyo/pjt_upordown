@@ -1,0 +1,103 @@
+.MainLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  
+}
+
+.MainLogo .Logo{
+  width: 400px;
+  height: 300px;
+  
+}
+
+.Search {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.Search-container {
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Search-inner {
+  position: relative;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+input {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #bbb;
+  margin: 10px 0;
+  padding: 10px 12px;
+  font-family: fontAwesome;
+}
+.fa-search {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  margin: 0;
+}
+.fa-keyboard {
+  position: absolute;
+  right: 35px;
+  top: 20px;
+}
+.fa-microphone {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  color: blue;
+}
+
+.Dropdown {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.Dropdown:empty {
+  border: none;
+}
+
+.Dropdown-row {
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+}
+
+.SearchList {
+  list-style: none;
+  padding: 0%;
+}
+
+.primary-nav {
+  display: flex;
+  height: 30px;
+}
+
+.primary-nav .Home {
+  flex: 1;
+}
+
+.primary-nav .Nav_SearchBar {
+  flex: 1;
+  
+}
+
+.primary-nav .About {
+  flex: 1;
+}
+
+
