@@ -18,7 +18,7 @@ export function Stock() {
           <Navbar/>
       </div>
     <div>
-          <p>그래프 출력칸</p>
+          <p>그래프 출력할 칸</p>
           {location.state.ticker}
           {location.state.name}
           
