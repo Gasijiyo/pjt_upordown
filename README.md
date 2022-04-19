@@ -1,22 +1,22 @@
 ## ITWILL 1조 주가예측모델 웹 서비스 
 
 ### 목차
-[1. 프로젝트에 대해](#About)
+[1. 프로젝트에 대해](#1. 프로젝트에 대해)
 
-​	[2. YS_Calculator](#Calculator)
+[2. Back](#2. Back)
 
-​	[3. YS_Project01_SQL](#Scheduler)
+​	[3. Front](#3. Front)
 
 ------
 
-### 프로젝트에 대해(#About)
+### 1. 프로젝트에 대해
 
 
 [목차로 이동](#목차)
 
 ------
 
-### Calculator
+### 2. Back
 
 
 
@@ -24,12 +24,11 @@
 
 ------
 
-### Scheduler
+### 3. Front
 
 [목차로 이동](#목차)
 
 ------
 
-#### 프로젝트 명
 
 
