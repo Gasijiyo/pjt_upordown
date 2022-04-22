@@ -8,7 +8,7 @@
 
 .MainLogo .Logo{
   width: 400px;
-  height: 300px;
+  height: auto;
   
 }
 
@@ -65,16 +65,19 @@ input {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  z-index: 99;
 }
 
 .Dropdown:empty {
   border: none;
+  z-index: 99;
 }
 
 .Dropdown-row {
   cursor: pointer;
   text-align: start;
   margin: 2px 0;
+  z-index: 99;
 }
 
 .SearchList {
@@ -99,5 +102,3 @@ input {
 .primary-nav .About {
   flex: 1;
 }
-
-

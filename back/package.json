@@ -13,6 +13,7 @@
     "express": "^4.17.3",
     "http-proxy-middleware": "^2.0.4",
     "nodemon": "^2.0.15",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "request": "^2.88.2"
   }
 }

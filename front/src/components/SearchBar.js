@@ -4,8 +4,8 @@ import React from 'react'
 // import { NavLink } from 'react-router-dom';
 import "../App.css"
 import { useState } from 'react'
-
 import { NavLink, useNavigate } from 'react-router-dom';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 var data = require("../Top10.json");
 
 
@@ -22,17 +22,17 @@ export function SearchBar()  {
   
   const onSearch = (props) => {
     console.log(props);
-    axios.post("/stock", {props}).then(response => {      
-      setInfo(response.data)
-      console.log('post 리턴 성공', response.data)
-      info = response.data.ticker;
-      console.log(info)      
-    }).catch(function (error){
-      console.log(error);
-    })    
-    .catch(() => {
-      console.log("불러오기 실패")
-    })
+    // axios.post("/stock", {props}).then(response => {      
+    //   setInfo(response.data)
+    //   console.log('post 리턴 성공', response.data)
+    //   info = response.data.ticker;
+    //   console.log(info)      
+    // }).catch(function (error){
+    //   console.log(error);
+    // })    
+    // .catch(() => {
+    //   console.log("불러오기 실패")
+    // })
   }
   
 
