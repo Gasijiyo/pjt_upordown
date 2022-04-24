@@ -1,12 +1,19 @@
 # UP or Down  주가예측모델 웹 서비스 
 
-- - -
-
+### Browsers support
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://gotbahn.github.io/browsers-support-badges/)</br>Chrome |
+| --------- |
+| Lastest :heavy_check_mark: | 
+<!--
+:heavy_check_mark:
+&check;
+-->
 ## 목차
 [1. 개요](#개요)
   * [주제](#주제)
+  * [사용설명](#사용설명)
   * [팀](#팀)
-  
+
 
 [2. 모델](#모델)
   * [개발환경](#개발환경)
@@ -28,6 +35,8 @@
 ### 개요
 
 #### 주제
+
+#### 사용설명
 
 #### 팀
 
@@ -54,7 +63,7 @@
 
 [목차로 이동](#목차)
 
-- - - 
+- - -
 
 ### 백엔드
 
@@ -63,6 +72,7 @@
 ![](https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=VisualStudioCode&logoColor=white)
 
 ![](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white)
+![](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=black)
 ![](https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white)
 ![](https://img.shields.io/badge/Nodemon-76D04B?style=flat-square&logo=Nodemon&logoColor=black)
 
@@ -87,6 +97,3 @@
 [목차로 이동](#목차)
 
 - - -
-
-
-
