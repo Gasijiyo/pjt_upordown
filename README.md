@@ -75,6 +75,7 @@
 ![](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=black)
 ![](https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white)
 ![](https://img.shields.io/badge/Nodemon-76D04B?style=flat-square&logo=Nodemon&logoColor=black)
+![](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flaskn&logoColor=white)
 
 
 #### 문제점
