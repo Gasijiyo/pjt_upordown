@@ -21,43 +21,82 @@ router.get('/*', function(req, res, next){
 })
 
 router.post('/', function(req, res, next){
-    console.log('post server ok',req.body.param)
-    let result = req.body.props;
-    console.log('post 데이터확인', result)
+    console.log('param=',req.body.param)
+    console.log('ticker=', req.body.ticker)
 
-    const giveParam = (callback) => {
-        const options = {
-            method:'POST',
-            uri:"http://127.0.0.1:5000/test",
-            qs:{
-                file: req.body.param
+    if(req.body.param != null){
+        const giveParam = (callback) => {
+            const options = {
+                method:'POST',
+                uri:"http://127.0.0.1:5000/test",
+                qs:{
+                    file: req.body.param
+                }
             }
-        }
-
-        request(options, function(err, res, body){
-            callback(undefined, {
-                result:body
+    
+            request(options, function(err, res, body){
+                callback(undefined, {
+                    result:body
+                });
             });
-        });
-    }
-
-    giveParam((err, {result}={})=>{
-        if(err){
-            console.log("error!!!!");
+        }
+    
+        giveParam((err, {result}={})=>{
+            if(err){
+                console.log("error!!!!");
+                res.send({
+                    message:"fail",
+                    status: "fail"
+                });
+            }
+            let json = JSON.parse(result);
             res.send({
-                message:"fail",
-                status: "fail"
+                message:"from flask",
+                status: "success",
+                data:{
+                    json
+                }
+            });
+        })   
+    }else if(req.body.ticker != null){
+        console.log('pred_ticker = ',req.body.ticker)
+        const giveParam = (callback) => {
+            const options = {
+                method:'POST',
+                uri:"http://127.0.0.1:5000/pred",
+                qs:{
+                    ticker: req.body.ticker,
+                    day: req.body.value1,
+                    feature: req.body.value2
+                }
+            }
+    
+            request(options, function(err, res, body){
+                callback(undefined, {
+                    result:body
+                });
             });
         }
-        let json = JSON.parse(result);
-        res.send({
-            message:"from flask",
-            status: "success",
-            data:{
-                json
+    
+        giveParam((err, {result}={})=>{
+            if(err){
+                console.log("error!!!!");
+                res.send({
+                    message:"fail",
+                    status: "fail"
+                });
             }
-        });
-    })   
+            let json = JSON.parse(result);
+            res.send({
+                message:"from flask",
+                status: "success",
+                data:{
+                    json
+                }
+            });
+        })   
+    }
+    
     
 
     // 파이썬 파일로 보내기

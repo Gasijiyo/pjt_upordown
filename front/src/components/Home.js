@@ -2,13 +2,14 @@
 // import { useState } from "react"
 import "../App.css"
 import { SearchBar } from "./SearchBar";
+import React from 'react'; 
 
 export function Home() {
 
     return (
         <>              
             <div className="MainLogo">
-                <img src="cat.png" alt="logo" className="Logo"/>
+                <img src="1.png" alt="logo" className="Logo"/>
             </div>            
             
             <div className="Search">
@@ -60,6 +61,4 @@ export function Home() {
         
     //     return name === keyword.toString().toLowerCase();
     // }
-
-
 

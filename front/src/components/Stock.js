@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import React, { PureComponent } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import RadioForm from "./RadioForm";
 
 export function Stock() {
   const searchInfo = SearchBar()
@@ -85,17 +85,21 @@ export function Stock() {
 
   return (
     <>
-      <div className="Nav">
-          <Navbar/>
-      </div>
-      <div>
-          {location.state.ticker}
-          {location.state.name}
-          <p>지난 10년의 종가</p>
-          {mode}
-          {/* <img src={`stockPic/${location.state.ticker}.png`}></img> */}
-          
-      </div>
-    </>
+    <div className="Nav">
+        <Navbar/>
+    </div>
+    <div className="firstGraph">
+        {location.state.ticker}
+        {location.state.name}
+        <div className="loader" />
+        <p>지난 10년의 종가</p>
+        {mode}    
+    </div>
+    <div className="checkBox">
+      <h3>딥러닝 모델을 선택해주세요</h3>
+      <RadioForm />                
+    </div>
+    
+  </>
   )
 }

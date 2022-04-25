@@ -3,6 +3,7 @@ import './App.css';
 import { About } from './components/About';
 import { Home } from './components/Home';
 import { Stock } from './components/Stock';
+import React from 'react';
 // import {SearchBar} from './components/SearchBar';
 function App() {  
   
@@ -13,6 +14,6 @@ function App() {
       <Route path='/about' element={<About/>}/>
     </Routes>
   );
-}
+} 
 
 export default App;

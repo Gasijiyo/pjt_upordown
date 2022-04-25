@@ -4,8 +4,8 @@ import React from 'react'
 // import { NavLink } from 'react-router-dom';
 import "../App.css"
 import { useState } from 'react'
+
 import { NavLink, useNavigate } from 'react-router-dom';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 var data = require("../Top10.json");
 
 
@@ -34,31 +34,33 @@ export function SearchBar()  {
     //   console.log("불러오기 실패")
     // })
   }
-  
+
 
   return (
-    <>        
+    <>
       <div className="Search-container">          
           <input type="text" value={name} onChange={onChange} placeholder="시총 상위 10개 종목만 검색 가능합니다."/>
-
-          <button onClick={() => onSearch(name)}> 검색 </button>
           
         
           <div className="Dropdown">
             {data.filter(item => {
               const searchedName = name.toLowerCase();
               const companyName = item.name.toLowerCase();
-              const ticker = item.ticker;              
-
-              return searchedName && companyName.includes(searchedName) 
-                    && companyName !== searchedName && ticker;
-            }) 
-            .map((item)=> (
+              const ticker = item.ticker;
+              
+              const result = searchedName && companyName.includes(searchedName) 
+                    /*&& companyName !== searchedName*/ && ticker;
+              
+              // if (result) {
+              //   console.log(searchedName, companyName, ticker);
+              // }
+              
+              return result;
+            })
+            .map(item => (
               <div onClick={() => onSearch([item.ticker, item.name])} 
-              className="Dropdown-row" key={item.ticker}>
+                className="Dropdown-row" key={item.ticker}>
                   <ul className="SearchList">
-                    
-                    
                       <li>
                         <span 
                         onClick={()=>{
@@ -66,14 +68,15 @@ export function SearchBar()  {
                             state:{ticker:item.ticker,
                             name:item.name
                           }
-                          });
+                          })
+                          setName('');
                         }}
                         >{item.ticker}  {item.name}</span>                      
                       </li>
-                    
-                  </ul>                 
+                  </ul>
               </div>
-              ))}
+            ))
+            }
           </div>
       </div>
     </>
