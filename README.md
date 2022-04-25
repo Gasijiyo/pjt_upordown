@@ -51,6 +51,7 @@
 ![](https://img.shields.io/badge/Windows10-0078D6?style=flat-square&logo=Windows&logoColor=white)
 ![](https://img.shields.io/badge/macOS-000000?style=flat-square&logo=macOS&logoColor=white)
 ![](https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=VisualStudioCode&logoColor=white)
+![](https://img.shields.io/badge/Google_Colab-F9AB00?style=flat-square&logo=GoogleColab&logoColor=black)
 
 ![](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=black)
 ![](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=TensorFlow&logoColor=black)
