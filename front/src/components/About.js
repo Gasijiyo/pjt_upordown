@@ -1,6 +1,7 @@
 import "../App.css"
 import React from 'react';
-import { Navbar } from "./Navbar";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export function About() {
   return (
@@ -124,8 +125,9 @@ export function About() {
             So we made our model in this way and trained it with train data and also tested with test data. 
           </p>
         </section>
-       </section>
+      </section>
     </div>
+    <Footer/>
     </>
   );
 }

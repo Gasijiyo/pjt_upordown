@@ -53,6 +53,9 @@ def test2():
     end = datetime(now.year, now.month, now.day); 
     df = pdr.DataReader(ticker+'.KS', 'yahoo', start = past, end = end)
 
+    
+
+
     # 전처리
     df['Volume'] = df['Volume'].replace(0,np.nan)
     df = df.dropna()
@@ -110,21 +113,24 @@ def test2():
     y_test = y[split:]
     dr = f'models/{ticker}_{time}_{params}.h5'
     print(dr)
-    model = keras.models.load_model(dr)
-
-    day = df.index[split:]
+    model = keras.models.load_model(dr,  compile=False)
+    
+    
     
     model_pred = model.predict(X_test)
     get_real = y_test.flatten()
-    get_pred = model_pred.flatten()
-    print(len(day),len(get_real),len(get_pred))
+    model_pred
+    day = df.index[-len(get_real):]
+    print(len(get_real))
+    print('index',len(day))
+    
     
    
     X_for_predict = scaled_df[feature_cols].values[-window_size:].reshape(1, window_size, len(feature_cols))
     result = model.predict(X_for_predict)
     # print(dat)
     # data = [{'name':'alpha', 'pred':'0.8','real':'0.9'}]
-    # print(result[0,4])
+    
     
     getFuture = ''
     if time == 'day':
@@ -145,9 +151,10 @@ def test2():
     def back_values(list):
         new_list = list * (close_max - close_min) + close_min
         return new_list
-    re_pred = back_values(get_pred)
-    print(df['Close'].iloc[split:].values)
-    re_real = df['Close'].iloc[split:].values
+    re_pred = back_values(model_pred.flatten())
+    print(re_pred)
+    # print(df['Close'].iloc[split:].values)
+    re_real = df['Close'].iloc[-len(day):].values
     print(re_pred)
 
     dat = []

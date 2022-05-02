@@ -4,7 +4,6 @@ import React from 'react'
 // import { NavLink } from 'react-router-dom';
 import "../App.css"
 import { useState } from 'react'
-
 import { NavLink, useNavigate } from 'react-router-dom';
 var data = require("../Top10.json");
 
@@ -42,7 +41,7 @@ export function SearchBar()  {
           <input type="text" value={name} onChange={onChange} placeholder="시총 상위 10개 종목만 검색 가능합니다."/>
           
         
-          <div className="Dropdown">
+          <div className="Dropdown absolute mt-1 right-1 top-full min-w-max shadow z-50">
             {data.filter(item => {
               const searchedName = name.toLowerCase();
               const companyName = item.name.toLowerCase();
@@ -62,7 +61,7 @@ export function SearchBar()  {
                 className="Dropdown-row" key={item.ticker}>
                   <ul className="SearchList">
                       <li>
-                        <span 
+                        <span className="block w-full text-sm py-3 px-4 font-normal cursor-pointer rounded-md text-black hover:text-white hover:bg-gray-400 transition-all duration-300"
                         onClick={()=>{
                           navigate('/stock/'+item.ticker,{
                             state:{ticker:item.ticker,
@@ -71,7 +70,7 @@ export function SearchBar()  {
                           })
                           setName('');
                         }}
-                        >{item.ticker}  {item.name}</span>                      
+                        >{item.ticker} <div className="font-bold text-xl">{item.name}</div></span>                      
                       </li>
                   </ul>
               </div>

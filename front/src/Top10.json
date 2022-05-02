@@ -1,15 +1,7 @@
 [
     {
         "ticker": "005930",
-        "name": "삼성전자"        
-    },
-    {
-        "ticker": "005930",
         "name": "Samsung Electronics"        
-    },
-    {
-        "ticker": "000660",
-        "name": "SK하이닉스"        
     },
     {        
         "ticker": "000660",
@@ -17,15 +9,7 @@
     },
     {
         "ticker": "035420",
-        "name": "네이버"        
-    },
-    {
-        "ticker": "035420",
         "name": "NAVER"        
-    },
-    {
-        "ticker": "051910",
-        "name": "LG화학"        
     },
     {
         "ticker": "051910",
@@ -33,15 +17,7 @@
     },
     {
         "ticker": "207940",
-        "name": "삼성바이오로직스"        
-    },
-    {
-        "ticker": "207940",
         "name": "Samsung Biologics"       
-    },
-    {
-        "ticker": "035720",
-        "name": "카카오"        
     },
     {
         "ticker": "035720",
@@ -49,15 +25,7 @@
     },
     {
         "ticker": "006400",
-        "name": "삼성SDI"        
-    },
-    {
-        "ticker": "006400",
         "name": "Samsung SDI"        
-    },
-    {
-        "ticker": "005380",
-        "name": "현대자동차"        
     },
     {
         "ticker": "005380",
@@ -65,15 +33,7 @@
     },
     {
         "ticker": "000270",
-        "name": "기아자동차"        
-    },
-    {
-        "ticker": "000270",
         "name": "KIA Motor"        
-    },
-    {
-        "ticker": "005490",
-        "name": "포스코 홀딩스"        
     },
     {
         "ticker": "005490",

@@ -59,17 +59,33 @@ export default function RadioForm() {
         console.log(future)
         
         
-        if(future == 'UP'){
+        if(future == 'U'){
             if(value1 == 'day'){
-                setUd(<div>{location.state.name} 주식은 내일 <span className='upword'>올라갈 것</span>으로 예상</div>)
+                setUd(
+                <div class="bg-gradient-to-tr from-red-400 to-red-600 mb-2 -ml-[65px] rounded-xl text-white grid items-center w-full text-center h-24 pb-4 px-8">
+                  <h2 className="font-medium text-2xl mb-0">{location.state.name}</h2>
+                  <h6>The stock is expected to go <span class="font-bold underline">UP</span> tomorrow.</h6>
+                </div>)
             }else{
-                setUd(<div>{location.state.name} 주식은 일주일 뒤 <span className='upword'>올라갈 것</span>으로 예상</div>)
+                setUd(
+                  <div class="bg-gradient-to-tr from-red-400 to-red-600 mb-2 -ml-[65px] rounded-xl text-white grid items-center w-full text-center h-24 pb-4 px-8">
+                    <h2 className="font-medium text-2xl mb-0">{location.state.name}</h2>
+                    <h6>The stock is expected to go <span class="font-bold underline">UP</span> next week.</h6>
+                  </div>)
             }
         }else{
             if(value1 == 'day'){
-                setUd(<div>{location.state.name} 주식은 내일 <span className='downword'>내려갈 것</span>으로 예상</div>)
+                setUd(
+                <div class="bg-gradient-to-tr from-blue-400 to-blue-600 mb-2 -ml-[65px] rounded-xl text-white grid items-center w-full text-center h-24 pb-4 px-8">
+                  <h2 className="font-medium text-2xl mb-0">{location.state.name}</h2>
+                  <h6>The stock is expected to go <span class="font-bold underline">DOWN</span> tomorrow.</h6>
+                </div>)
             }else{
-                setUd(<div>{location.state.name} 주식은 일주일 뒤 <span className='downword'>내려갈 것</span>으로 예상</div>)
+                setUd(
+                  <div class="bg-gradient-to-tr from-blue-400 to-blue-600 mb-2 -ml-[65px] rounded-xl text-white grid items-center w-full text-center h-24 pb-4 px-8">
+                    <h2 className="font-medium text-2xl mb-0">{location.state.name}</h2>
+                    <h6>The stock is expected to go <span class="font-bold underline">DOWN</span> next week.</h6>
+                  </div>)
             }
             
         }
@@ -89,7 +105,7 @@ export default function RadioForm() {
 
         const content = (<>
             <LineChart
-              width={1200}
+              width={1000}
               height={500}
               data={data}
               margin={{
@@ -127,50 +143,56 @@ export default function RadioForm() {
     <>
       {/* 라디오 버튼 form */}
       {/* <form onSubmit={handleSubmit}> */}
+        <div className="DeeplearnLoaderBox">
+          {mode}
+        </div>
+        <div class="-mt-[450px] -ml-[60px] mb-4 rounded-xl items-center w-[160px] h-[360px] py-2 px-1 border">  
           <div>
               <FormControl component="fieldset">
-                <FormLabel component="legend">일 선택</FormLabel>
-                <RadioGroup row aria-label="day" name="day" value={value1} onChange={handleRadioChange1}>
+                <FormLabel component="legend">Days</FormLabel>
+                <RadioGroup aria-label="day" name="day" value={value1} onChange={handleRadioChange1}>
                   <FormControlLabel
                     value="day"
                     control={<Radio color="primary" />}
-                    label="1일"
-                    labelPlacement="start"
+                    label="1 day"
+                    labelPlacement="end"
                   />
                   <FormControlLabel
                     value="week"
                     control={<Radio color="primary" />}
-                    label="5일"
-                    labelPlacement="start"
+                    label="7 days"
+                    labelPlacement="end"
                   />
                 </RadioGroup>
               </FormControl>
           </div>
           <div>
               <FormControl component="fieldset">
-                <FormLabel component="legend">모델 선택</FormLabel>
-                <RadioGroup row aria-label="model" name="model" value={value2} onChange={handleRadioChange2}>
+                <FormLabel component="legend">Features</FormLabel>
+                <RadioGroup aria-label="model" name="model" value={value2} onChange={handleRadioChange2}>
                   <FormControlLabel
                     value="C"
                     control={<Radio color="primary" />}
-                    label="종가"
-                    labelPlacement="start"
+                    label="Close"
+                    labelPlacement="end"
                   />
                   <FormControlLabel
                     value="CV"
                     control={<Radio color="primary" />}
-                    label="종가+Volume"
-                    labelPlacement="start"
+                    label="Close + Volume"
+                    labelPlacement="end"
                   />
                 </RadioGroup>
               </FormControl>              
           </div>      
-          <FormHelperText>계산하는데 시간이 조금 소요됩니다.</FormHelperText>
+          <FormHelperText>It takes some times.</FormHelperText>
           <Button type="submit" onClick={handleSubmit} variant="outlined" color="primary" className="selectbutton">
-              딥러닝 시작
+              Starts learning!
           </Button>
-          {mode}
+        </div>
+        <div className="skeleton-ud">
           {ud}
+        </div>
       {/* </form> */}
     </>
       

@@ -1,29 +1,35 @@
-import { NavLink } from 'react-router-dom'
-import React from 'react'; 
-// import { useAuth } from './auth'
+import React from 'react';
 import "../App.css"
 import { SearchBar } from './SearchBar'
+import {Link} from 'react-router-dom';
+import logo from './HomeLogo.png';
 
-export const Navbar = () => {
-
-    const navLinkStyles = ({ isActive }) => {
-        return {
-            fontWeight: isActive ? 'bold' : 'normal',
-            textDecoration: isActive ? 'none' : 'underline',
-        }
-    }
+export default function Navbar() {
     
     return (
-        <nav className='primary-nav'>
-            <div className='Home'>
-                <NavLink style={navLinkStyles} to='/'>Home</NavLink>
+        <div class="flex">
+            {/* <!-- Nav --> */}
+            <div
+            class="flex flex-wrap justify-between w-screen h-20 text-white bg-gray-800 md:flex-nowrap"
+            >
+            {/* <!-- LOGO --> */}
+            <div class="z-30 flex items-center h-full pl-3 bg-gray-800">
+                <Link to='/'>
+                    <img src={logo} alt="subLogo" height="33%" width="33%" />
+                </Link>
             </div>
-            <div className='Nav_SearchBar'>
-                <SearchBar/>
+    
+            {/* <!-- Menu --> */}
+            <div
+                class="flex flex-col items-stretch w-screen text-xl text-center transform bg-gray-800 md:flex-row md:translate-y-0 md:space-x-8 md:items-center md:justify-end"
+            >
+                <div class="mt-3 mr-7 content-center text-black w-[432px]">
+                    <div class="Navbar_dropdown">
+                        <SearchBar />
+                    </div>
+                </div>
             </div>
-            <div className='About'>
-                <NavLink style={navLinkStyles} to='/about'>About</NavLink> 
-            </div>            
-        </nav>
+            </div>
+        </div>
     )
 }

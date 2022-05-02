@@ -1,4 +1,4 @@
-import { Navbar } from "./Navbar"
+import Navbar from "./Navbar";
 import { useState, useEffect } from "react";
 import "../App.css"
 import { SearchBar } from "./SearchBar"
@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import React, { PureComponent } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import RadioForm from "./RadioForm";
+import Footer from "./Footer";
 
 export function Stock() {
   const searchInfo = SearchBar()
@@ -51,7 +52,7 @@ export function Stock() {
 
           const content = (
             <AreaChart
-              width={800}
+              width={1200}
               height={500}
               data={newData}
               margin={{
@@ -86,20 +87,34 @@ export function Stock() {
   return (
     <>
     <div className="Nav">
-        <Navbar/>
+      <Navbar/>
     </div>
-    <div className="firstGraph">
-        {location.state.ticker}
-        {location.state.name}
-        <div className="loader" />
-        <p>지난 10년의 종가</p>
-        {mode}    
+
+    <div class="stocks_contents">
+      <section class="w-[1200px] mb-[80px] m-auto">
+        <div className="firstGraph">
+          <div class="bg-gradient-to-tr from-orange-500 to-orange-700 mt-4 mb-4 -ml-[65px] mr-auto rounded-xl text-white grid items-center w-full h-24 py-4 px-8 z-51">
+            <h6 class="text-gray-200 text-xs font-medium">{location.state.ticker}</h6>
+            <h2 class="text-white text-2xl">{location.state.name}</h2>
+          </div>
+          <div className="loaderBox">
+            {mode}
+            {!mode && <div className="loader" />}
+          </div>
+        </div>
+      </section>
+      
+      <section class="w-[1200px] mb-[80px] m-auto">
+        <div className="border-t"/>
+        <div class="bg-gradient-to-tr from-green-400 to-green-600 mt-4 mb-4 -ml-[65px] mr-auto rounded-xl text-white grid w-full text-center h-16 py-4 px-8">
+          <h3 class="text-white text-2xl">Select deep learning model</h3>
+        </div>
+        <RadioForm />
+      </section>   
     </div>
-    <div className="checkBox">
-      <h3>딥러닝 모델을 선택해주세요</h3>
-      <RadioForm />                
+    <div className="stocks_footer">
+      <Footer/>
     </div>
-    
-  </>
+    </>
   )
 }

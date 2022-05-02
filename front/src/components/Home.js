@@ -1,20 +1,20 @@
 // import { useNavigate } from "react-router-dom"
 // import { useState } from "react"
 import "../App.css"
-import { SearchBar } from "./SearchBar";
-import React from 'react'; 
+import React from 'react';
+import Header from "./Header";
+import Footer from "./Footer";
 
 export function Home() {
 
     return (
-        <>              
-            <div className="MainLogo">
-                <img src="1.png" alt="logo" className="Logo"/>
-            </div>            
+        <>  <div className="absolute w-full z-20">
             
-            <div className="Search">
-                <SearchBar/>
             </div>
+            <main>
+                <Header/>
+            </main>
+            <Footer/>
         </>
     )
 }
